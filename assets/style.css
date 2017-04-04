@@ -1,0 +1,35 @@
+#nomStatus{
+	clear:right;
+	margin-top: 15px;
+	color: white;
+	font-size: 14px;
+	background-color: #3C6289;
+	border-radius: 8px;
+	z-index: 8;
+	font-family: 'Roboto Condensed', 'Open Sans Condensed', 'Open Sans', 'Helvetica Neue', Helvetica , Arial, sans-serif;
+	font-weight: 400 !important;
+	font-variant: normal;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+	min-width: 200px;
+	padding: 2px;
+	padding-left: 18px;
+	width:5%;
+	margin-left: 18px;
+}
+
+#statusDiv{
+	clear:left;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	background-color: white;
+	padding: 4px 14px 10px 14px;
+	padding-top: 18px;
+	font-size: 12px;
+	margin-top: -10px;
+	margin-bottom: 10px;
+	border: 1px solid #3C6289;
+	border-radius: 8px;
+	z-index: 1;
+	box-shadow: 1px 1px 3px #888;
+	padding-right: 18px;
+}

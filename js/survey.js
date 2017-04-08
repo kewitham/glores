@@ -48,27 +48,19 @@ function gotNomStatus(response){
 function displaySurvey(response){
  		var navP = $("<p>")
  			navP.text("This site has not been nominated yet.")
- 		var navBtn = $("<button>");
- 		 	navBtn.text("Nominate This Site");
- 		 	navBtn.attr('class', 'btn btn-default')
- 		 	$('#statusDiv').prepend(navBtn)
  		 	$("#statusDiv").prepend(navP)
  		 	var id = response.mpa_id;
 
- 		 	navBtn.click(function(response){getSiteInfo(id)});
+ 		 	getSiteInfo(id);
  	}
 
 function displayComment(response){
 	var navP = $("<p>")
  			navP.text("This site has already been nominated.")
-	var navBtn = $("<button>");
- 		 	navBtn.text("Add a Comment");
- 		 	navBtn.attr('class', 'btn btn-default')
- 		 	$('#statusDiv').prepend(navBtn)
  		 	$('#statusDiv').prepend(navP)
  		 	var id = response.mpa_id;
 
- 		 	navBtn.click(function(response){getCommentInfo(id)});
+ 		 	getCommentInfo(id);
  	}
 
  function displayComplete(response){
@@ -97,7 +89,10 @@ function gotSiteInfo(response){
 	var yr = response.status_year
 	var surveyURL = "http://www.surveygizmo.com/s3/2829308/Global-Ocean-Refuge-System-provisional-nomination?name=" + name +"&cy=" + cy + "&id=" + id + "&yr=" + yr + "/"
 	console.log(surveyURL)
-	surveyWindow(surveyURL);
+	var navLink = $("<a>");
+ 	navLink.text("Nominate this Site");
+ 	navLink.attr('href', surveyURL);
+ 	$('#statusDiv').append(navLink)
  }
 
  function getCommentInfo(id){
@@ -116,9 +111,8 @@ function gotCommentInfo(response){
 	var id = response.mpa_id;
 	var surveyURL = "http://www.surveygizmo.com/s3/3421706/GLORES-Evaluation-Report-Comment?name=" + name + "&id=" + id
 	console.log(surveyURL);
-	surveyWindow(surveyURL)
- }
-
- function surveyWindow(surveyURL){
-		window.open(surveyURL);
+	var navLink = $("<a>");
+ 	navLink.text("Add a Comment");
+ 	navLink.attr('href', surveyURL);
+ 	$('#statusDiv').append(navLink)
  }
